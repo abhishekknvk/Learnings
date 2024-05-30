@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 
     // add movie
-    const addForm = orms['add-movie'];
+    const addForm = forms['add-movie'];
     addForm.addEventListener('submit', function(e){
-        e.parentDefault();
+        e.preventDefault();
 
 
         //Creating Elements
-        const value =addForm.querySelector("input[type ='text']").value;
-        const li= document.createElement(li);
+        const value =addForm.querySelector('input[type ="text"]').value;
+        const li= document.createElement('li');
         const movieName = document.createElement('span');
         const deleteBtn = document.createElement('span');
 
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded',function(){
     //add classes
 
     movieName.classList.add('name');
-    deletebtn.classList.add('delete');
+    deleteBtn.classList.add('delete');
 
     //append to DOM
 
     li.appendChild(movieName);
     li.appendChild(deleteBtn);
-    list.append(li);
+    list.appendChild(li);
 
     });
 })
