@@ -34,6 +34,20 @@ h1,h2{
     text-align: center;
     margin: 10px 0;
 }
+.star {
+    font-size: 40px;
+    color: grey;
+    cursor: pointer;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: gold;
+}
+
+.filled {
+    color: gold;
+}
 
 #movie-list,
 #add-movie{
