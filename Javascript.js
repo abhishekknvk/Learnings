@@ -2,6 +2,21 @@ document.addEventListener('DOMContentLoaded',function(){
     const list = document.querySelector('#movie-list ul');
     const forms = document.forms;
 
+
+    document.addEventListener('click', function(e) {
+        if(e.target.classList.contains('star')) {
+            let value = e.target.getAttribute('data-value');
+            let stars = e.target.parentNode.querySelectorAll('.star');
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= value) {
+                    star.classList.add('filled');
+                } else {
+                    star.classList.remove('filled');
+                }
+            });
+        }
+    });
+    
     // delete movie
     list.addEventListener('click', (e)=>{
     if(e.target.className == 'delete'){
@@ -54,6 +69,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
     li.appendChild(movieName);
     li.appendChild(deleteBtn);
+    li.appendChild(starsContainer);
     list.appendChild(li);
 
     });
