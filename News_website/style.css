@@ -1,0 +1,105 @@
+* Add this CSS to your stylesheet */
+.hover-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .hover-text {
+  opacity: 1;
+}
+/* Add this CSS to your stylesheet */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  height: 250px;
+  object-fit: cover;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0px 0px;
+  backdrop-filter: blur(8px); /* Adjust the blur radius as needed */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .blur-overlay {
+  opacity: 1;
+}
+
+.card:hover .interaction-buttons {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.interaction-buttons {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: default;
+}
+
+.touch-button,
+.keyboard-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.none-touch-button,
+.none-keyboard-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.touch-button{
+    background-color: red;
+    color: white;
+    border: none;
+}
+.keyboard-button{
+    background-color: white;
+    color: red;
+    border: none;
+}
+
+/* Add this CSS to your stylesheet */
+.card:hover .keyboard-button {
+  animation: animate__zoomInRight 0.9s;
+}
+
+@keyframes animate__zoomInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.card:hover .touch-button {
+  animation: animate__zoomInRight 0.9s;
+}
+
+@keyframes animate__zoomInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
